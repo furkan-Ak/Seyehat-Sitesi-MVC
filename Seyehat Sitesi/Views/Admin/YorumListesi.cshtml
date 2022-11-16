@@ -1,0 +1,32 @@
+﻿@using Seyehat_Sitesi.Models.Sınıflar
+@model List<Yorumlar>
+@{
+    ViewBag.Title = "YorumListesi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h2>YORUM LİSTESİ</h2>
+<table class=" table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Kullanıcı Adı</th>
+        <th>Mail</th>
+        <th>Yorum</th>
+        <th>Blog</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.ID</td>
+            <td>@x.KullaniciAdi</td>
+            <td>@x.Mail</td>
+            <td>@x.Yorum</td>
+            <td>@x.Blog.Baslik</td>
+            <td><a class="btn btn-danger" href="/Admin/YorumSil/@x.ID">SİL</a></td>
+            <td><a class="btn btn-primary" href="/Admin/YorumGetir/@x.ID">GÜNCELLE</a></td>
+
+
+        </tr>
+    }
+</table>

@@ -1,0 +1,19 @@
+﻿@using Seyehat_Sitesi.Models.Sınıflar
+@model List<Hakkında>
+@{
+    ViewBag.Title = "Hakkında";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div class="content">
+    <div class="wrap">
+        <div class="about">
+            <h3>Hakkında</h3>
+          @foreach(var x in Model)
+            {
+              <img src="@x.FotoUrl"/>
+              <p>@x.Aciklama</p>
+            }
+        </div>
+    </div>
+</div>
